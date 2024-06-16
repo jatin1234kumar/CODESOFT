@@ -1,0 +1,96 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  background-color: whitesmoke;
+  /* background-image: url('assets/'); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.CalcBody {
+  width: 300px;
+  height: 458px;
+  background-color: dodgerblue;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.input {
+  padding: 10px;
+  font-size: 3rem;
+  color: black;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  text-align: right;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.btnBox {
+  display: grid;
+  grid-template-columns: repeat(4, 2.8rem);
+  grid-template-rows: repeat(4, 2.8rem);
+  grid-gap: 20px;
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+}
+
+.btn {
+  padding: 10px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: white;
+  background: rgb(30, 73, 189);
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+}
+
+.btn img {
+  filter: invert(100%);
+  pointer-events: none;
+
+}
+
+.btn#clear {
+  background-color: rgb(216, 60, 60);
+}
+
+.btn#equal {
+grid-column: 4 / span 1;
+grid-row: 4 / span 2;
+}
+
+/* To remove the inner up and down arror in an input fileld */
+/* 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+} */
