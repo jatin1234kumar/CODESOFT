@@ -10,6 +10,7 @@ input.value = 0;
 Array.from(btn).forEach(element => {
     element.addEventListener('click', (e) => {
         var buttonClicked = e.target.dataset.value;
+        input.style.color = "black";
         input.value += buttonClicked;
 
         var string = input.value;
@@ -26,6 +27,7 @@ Array.from(btn).forEach(element => {
             let equal = string.substring(0, string.length - 5);
             input.value = 0;
             input.value = eval(equal);
+            input.style.color = "green";
         }
 
         function containsAny(string) {
@@ -77,27 +79,27 @@ Array.from(btn).forEach(element => {
             return chars.join('');
         }
 
-        // fucntion to check the situation: 4+5-6/8 not happens
+        // // fucntion to check the situation: 4+5-6/8 not happens
 
-        function addOperatorIfAlreadyPresent(word, charToAdd, action) {
-            // Define the set of characters to check
-            const operators = ['+', '-', '/', '*'];
+        // function addOperatorIfAlreadyPresent(word, charToAdd, action) {
+        //     // Define the set of characters to check
+        //     const operators = ['+', '-', '/', '*'];
 
-            // Check if the charToAdd is one of the operators
-            if (operators.includes(charToAdd)) {
-                // Check if any of the operators are already present in the word
-                const operatorPresent = operators.some(operator => word.includes(operator));
+        //     // Check if the charToAdd is one of the operators
+        //     if (operators.includes(charToAdd)) {
+        //         // Check if any of the operators are already present in the word
+        //         const operatorPresent = operators.some(operator => word.includes(operator));
 
-                if (operatorPresent) {
-                    let operatorFound = string.substring(0, string.length - 1);;
+        //         if (operatorPresent) {
+        //             let operatorFound = string.substring(0, string.length - 1);;
 
-                    input.value = "";
-                    input.value = `${eval(operatorFound)}${buttonClicked}`;
-                }
-            }
-        }
+        //             input.value = "";
+        //             input.value = `${eval(operatorFound)}${buttonClicked}`;
+        //         }
+        //     }
+        // }
 
-        addOperatorIfAlreadyPresent(input.value, buttonClicked);
+        // addOperatorIfAlreadyPresent(input.value, buttonClicked);
     })
 
     // function to check weather the given input have . after all four operators(+,*,/,-)
