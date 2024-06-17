@@ -1,3 +1,9 @@
+:root {
+    --padding : 4% 10%;
+    --marginBottom : 1.3rem;
+    --peraColor : rgb(34, 30, 30);
+}
+
 *,
 *::after,
 *::before {
@@ -12,9 +18,140 @@ html {
 
 body {
     scroll-behavior: smooth;
+    font-family: serif;
+    padding: var(--padding);
+    background-color: rgb(26, 187, 80);
 }
 
 /* Basic styles classes */
+
+
+
+/* main classes */
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: black;
+}
+
+.main .mainHeaading {
+    width: 100%;
+    text-align: center;
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: var(--marginBottom);
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.main .mainSectionImg {
+    width: 100%;
+    height: auto;
+}
+
+.main .mainPera {
+    width: 100%;
+    text-align: left;
+    font-size: 1.5rem;
+    color: var(--peraColor);
+}
+
+.aboutBox {
+    width: 100%;
+    position: relative;
+    background-color: transparent;
+    z-index: 1;
+    padding: 2rem 1.5rem;
+    margin: 2rem 0;
+}
+
+.aboutBox::before {
+    content: '';
+    width: 100%;
+    border-radius: 8px;
+    height: 100%;
+    /* background-color: rgb(62, 184, 103);
+    opacity: .9; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    box-shadow: rgba(70, 70, 114, 0.25) 0px 30px 60px -12px inset, rgba(31, 30, 30, 0.3) 0px 18px 36px -18px inset;
+}
+
+.aboutBox h2 {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 2.8rem;
+    margin-bottom: var(--marginBottom);
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.aboutBox p {
+    margin-bottom: var(--marginBottom);
+    color: var(--peraColor);
+    font-size: 1.4rem;
+    margin-bottom: var(--marginBottom);
+}
+
+.aboutBox p img {
+    margin-right: .5rem;
+}
+
+footer {
+    width: 100%;
+}
+
+footer p {
+    font-size: 1.2rem;
+    color: var(--peraColor);
+    text-align: left;
+}
+
+
+@media screen and (max-width: 900px) {
+    .main .mainHeaading {
+        font-size: 3rem;
+    }
+
+    .main .mainPera {
+        font-size: 1.4rem;
+    }
+    
+    .aboutBox p {
+        font-size: 1.3rem;
+    }
+
+    footer p {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .main .mainHeaading {
+        font-size: 2.7rem;
+    }
+
+    .main .mainPera {
+        font-size: 1.3rem;
+    }
+
+    .aboutBox p {
+        font-size: 1.2rem;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
+}
+
+
+
+
 
 
 /* section starts */
