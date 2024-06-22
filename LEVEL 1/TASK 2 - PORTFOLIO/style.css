@@ -1,0 +1,195 @@
+:root {
+  --color: blue;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+/* general classess */
+
+/* section classess */
+
+navbar {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+navbar .navLinks {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+navbar .navLinks .link {
+  text-decoration: none;
+  color: grey;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  transition: color 0.4s ease;
+}
+
+navbar .navLinks .link:hover {
+  color: #222;
+}
+
+/* nav's hamburger */
+
+.hamContainer {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/* main section starts */
+
+.main {
+  width: 100%;
+}
+
+.mainBoxes {
+  padding: 1rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.main .mainBoxes .mainBox:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2rem;
+  align-items: left;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.main .mainBoxes .mainBox:nth-child(1) h1 {
+  margin-bottom: 2rem;
+}
+
+.mainHeading {
+  font-size: 3rem;
+}
+
+.main .mainBoxes .mainBox:nth-child(1) p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.main .mainBoxes .mainBox:nth-child(1) .iconBox {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2rem;
+}
+
+.main .mainBoxes .mainBox:nth-child(1) .iconBox .icons {
+  text-decoration: none;
+  padding: 1rem;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
+  transition: opacity 0.4s ease-out;
+}
+
+.main .mainBoxes .mainBox:nth-child(1) .iconBox .icons:hover,
+.main .mainBoxes .mainBox:nth-child(1) .iconBox .icons:hover .iconImg {
+  opacity: 1;
+}
+
+.main .mainBoxes .mainBox:nth-child(1) .iconBox .icons .iconImg {
+  color: white;
+  font-size: 1.4rem;
+  opacity: 0.8;
+  transition: opacity 0.4s ease-out;
+}
+
+.main .mainBoxes .mainBox .buttonBox .btn {
+  padding: 0.8rem 1.2rem;
+  font-size: 1.1rem;
+  background-color: purple;
+  color: white;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.main .mainBoxes .mainBox .buttonBox .btn:nth-child(1) {
+  margin-right: 1rem;
+}
+
+.main .mainBoxes .mainBox img {
+  width: 100%;
+  text-align: center;
+}
+
+@media screen and (max-width: 950px) {
+
+}
+
+@media screen and (max-width: 500px) {
+  .main .mainBoxes {
+    display: flex;
+    width: 100%;
+  }
+
+  .main .mainBoxes .mainBox:nth-child(1) {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .main .mainBoxes .mainBox:nth-child(2) {
+    display: none;
+    visibility: hidden;
+  }
+}
