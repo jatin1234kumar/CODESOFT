@@ -28,8 +28,15 @@ navbar {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 1rem 2rem;
+}
+
+.navbar .logo {
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  cursor: pointer;
 }
 
 navbar .navLinks {
@@ -51,6 +58,13 @@ navbar .navLinks .link:hover {
   color: #222;
 }
 
+.navbar .hamContainer {
+  position: absolute;
+  top: 2rem;
+  right: 2.8rem;
+}
+
+
 /* nav's hamburger */
 
 .hamContainer {
@@ -66,6 +80,7 @@ navbar .navLinks .link:hover {
   background-color: #333;
   margin: 6px 0;
   transition: 0.4s;
+  pointer-events: none;
 }
 
 .change .bar1 {
@@ -80,6 +95,57 @@ navbar .navLinks .link:hover {
 .change .bar3 {
   -webkit-transform: rotate(45deg) translate(-8px, -8px);
   transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/* responsive navbar */
+
+.responsive.navbar {
+  width: 100% !important;
+  height: 100vh !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1; 
+}
+
+.responsive.navbar .logo {
+  z-index: -2;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.responsive.navbar::before  {
+  display: block;
+  width: 100% !important;
+  height: 100vh !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  background-color: #333;
+  opacity: .8;
+  z-index: -1;
+}
+
+.responsive.navbar .navLinks {
+  display: flex;
+  flex-direction: column;
+  visibility: visible;
+}
+
+.responsive.navbar .navLinks .link {
+  color: #333;
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.responsive.navbar .navLinks .link:hover {
+  color: #000;
 }
 
 /* main section starts */
@@ -98,7 +164,6 @@ navbar .navLinks .link:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 2rem;
   align-items: left;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
@@ -172,8 +237,13 @@ navbar .navLinks .link:hover {
   text-align: center;
 }
 
-@media screen and (max-width: 950px) {
+.hidden {
+  display: none;
+  visibility: hidden;
+}
 
+@media screen and (max-width: 950px) {
+    
 }
 
 @media screen and (max-width: 500px) {
